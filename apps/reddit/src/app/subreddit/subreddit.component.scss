@@ -1,0 +1,23 @@
+li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e6eae7;
+  padding: 1rem;
+  border-bottom-width: 2px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.refresh-button {
+  background-color: #4299e1;
+  color: white;
+  padding: .5rem
+}

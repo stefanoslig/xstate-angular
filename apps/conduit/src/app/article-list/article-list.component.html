@@ -1,0 +1,25 @@
+<div class="app-article-preview" *ngIf="isLoading$ | async">
+  Loading articles...
+</div>
+
+<div
+  class="app-article-preview"
+  *ngIf="(isLoading$ | async) || (articles$ | async)?.length === 0"
+>
+  No articles are here... yet.
+</div>
+
+<app-article-list-item
+  (unFavorite)="unFavorite($event)"
+  (favorite)="favorite($event)"
+  *ngFor="let article of articles$ | async"
+  [article]="article"
+>
+</app-article-list-item>
+
+<!-- <app-pager
+    (setPage)="setPage($event)"
+    [hidden]="(totalPages$ | ngrxPush)?.length <= 1 || isLoading"
+    [currentPage]="(listConfig$ | ngrxPush)?.currentPage"
+    [totalPages]="totalPages$ | ngrxPush"
+  ></app-pager> -->

@@ -29,6 +29,16 @@
     "conduit-e2e": {
       "tags": [],
       "implicitDependencies": ["conduit"]
+    },
+    "xstate-angular": {
+      "tags": []
+    },
+    "reddit": {
+      "tags": []
+    },
+    "reddit-e2e": {
+      "tags": [],
+      "implicitDependencies": ["reddit"]
     }
   }
 }

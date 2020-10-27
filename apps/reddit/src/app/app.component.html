@@ -1,0 +1,24 @@
+<main>
+  <header>
+    <form [formGroup]="form">
+      <select
+        formControlName="subreddit"
+        (change)="selectSubReddit($event.target.value)"
+      >
+        <option disabled [value]="null">Select one</option>
+        <option *ngFor="let subreddit of subreddits" [value]="subreddit">
+          {{ subreddit }}
+        </option>
+      </select>
+    </form>
+  </header>
+  <section *ngIf="redditMachine.state$ | async as state">
+    <h1>
+      {{ state.matches('idle') ? 'Select a subreddit' : null }}
+    </h1>
+    <app-subreddit
+      *ngIf="!!state.context.subreddit"
+      [subreddit]="state.context.subreddit"
+    ></app-subreddit>
+  </section>
+</main>
