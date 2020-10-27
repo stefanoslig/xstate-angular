@@ -123,36 +123,6 @@
         }
       }
     },
-    "xstate-angular": {
-      "projectType": "library",
-      "root": "libs/xstate-angular",
-      "sourceRoot": "libs/xstate-angular/src",
-      "prefix": "xstate-angular",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/xstate-angular/tsconfig.lib.json",
-              "libs/xstate-angular/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/xstate-angular/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/xstate-angular/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "reddit": {
       "projectType": "application",
       "schematics": {
@@ -269,6 +239,48 @@
             "tsConfig": ["apps/reddit-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/reddit-e2e/**/*"]
           }
+        }
+      }
+    },
+    "xstate-angular": {
+      "projectType": "library",
+      "root": "libs/xstate-angular",
+      "sourceRoot": "libs/xstate-angular/src",
+      "prefix": "xstate-angular",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/xstate-angular/tsconfig.lib.json",
+            "project": "libs/xstate-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/xstate-angular/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/xstate-angular/tsconfig.lib.json",
+              "libs/xstate-angular/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/xstate-angular/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/xstate-angular/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

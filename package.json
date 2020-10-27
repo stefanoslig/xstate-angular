@@ -41,6 +41,7 @@
     "rxjs": "~6.5.5",
     "zone.js": "^0.10.2",
     "@xstate/inspect": "0.1.1",
+    "tslib": "^2.0.0",
     "ts-action": "11.0.0",
     "xstate": "4.13.0"
   },
@@ -61,6 +62,7 @@
     "jest-preset-angular": "8.3.1",
     "prettier": "2.0.4",
     "ts-jest": "26.4.0",
+    "ng-packagr": "^10.1.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
     "typescript": "~4.0.3",

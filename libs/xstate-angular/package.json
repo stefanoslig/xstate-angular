@@ -1,0 +1,38 @@
+{
+  "name": "@xstate-angular/xstate-angular",
+  "version": "0.0.1",
+  "description": "This package created to make interactions with XState in an Angular application easier",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=10.12.0",
+    "npm": ">=5.3.0",
+    "yarn": ">=1.9.2"
+  },
+  "keywords": [
+    "angular",
+    "xstate",
+    "state management",
+	"state",
+	"state machines"
+  ],
+  "contributors": [
+    {
+      "name": "Stefanos Lignos",
+      "email": "stefanoslignos@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefanoslig/xstate-angular"
+  },
+  "peerDependencies": {
+    "@angular/common": ">8.0.0",
+    "@angular/core": ">8.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

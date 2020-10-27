@@ -30,15 +30,15 @@
       "tags": [],
       "implicitDependencies": ["conduit"]
     },
-    "xstate-angular": {
-      "tags": []
-    },
     "reddit": {
       "tags": []
     },
     "reddit-e2e": {
       "tags": [],
       "implicitDependencies": ["reddit"]
+    },
+    "xstate-angular": {
+      "tags": []
     }
   }
 }
