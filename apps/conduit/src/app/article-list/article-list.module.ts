@@ -7,7 +7,7 @@ import { ArticleListComponent } from './article-list.component';
 import { ArticleListService } from './article-list.service';
 import { ArticleListMachineFacade } from './+xstate/article-list-machine.facade';
 import { ArticleListMachineService } from './+xstate/article-list-machine.config';
-import { XstateAngular } from '@xstate-angular/xstate-angular';
+import { XstateAngular } from 'xstate-angular';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
@@ -15,8 +15,8 @@ import { XstateAngular } from '@xstate-angular/xstate-angular';
   providers: [
     ArticleListService,
     ArticleListMachineFacade,
-	ArticleListMachineService,
-	XstateAngular
+    ArticleListMachineService,
+    XstateAngular,
   ],
   exports: [ArticleListComponent],
 })

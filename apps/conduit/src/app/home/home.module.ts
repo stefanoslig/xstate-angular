@@ -8,7 +8,7 @@ import { HomeMachineService } from './+xstate/home-machine.config';
 import { HomeMachineFacade } from './+xstate/home-machine.facade';
 import { TagsListComponent } from './tags-list/tags-list.component';
 import { ArticleListModule } from '../article-list/article-list.module';
-import { XstateAngular } from '@xstate-angular/xstate-angular';
+import { XstateAngular } from 'xstate-angular';
 
 @NgModule({
   imports: [

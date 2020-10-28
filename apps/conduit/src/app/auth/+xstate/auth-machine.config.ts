@@ -15,7 +15,7 @@ import { AuthService } from '../auth.service';
 import { map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
-import { XstateAngular } from '@xstate-angular/xstate-angular';
+import { XstateAngular } from 'xstate-angular';
 
 export const GLOBAL_XSTATE_ANGULAR = new InjectionToken<
   XstateAngular<AuthMachineContext, AuthMachineSchema, AuthMachineEvent>

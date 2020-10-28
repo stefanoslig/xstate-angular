@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Machine, assign } from 'xstate';
-import { XstateAngular } from '@xstate-angular/xstate-angular';
+import { XstateAngular } from 'xstate-angular';
 import { environment } from '../../../environments/environment';
 import { HomeMachineContext, HomeMachineSchema } from './home-machine.schema';
 import {

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { RedditEvent, SelectReddit } from './+xstate/reddit-machine.events';
-import { XstateAngular } from '@xstate-angular/xstate-angular';
+import { XstateAngular } from 'xstate-angular';
 import { redditMachine } from './+xstate/reddit-machine.config';
 import { RedditContext, RedditSchema } from './+xstate/reddit-machine.schema';
 

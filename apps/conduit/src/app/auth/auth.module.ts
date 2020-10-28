@@ -9,9 +9,12 @@ import { AuthService } from './auth.service';
 import { RegisterComponent } from './register/register.component';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { XstateAngular } from '@xstate-angular/xstate-angular';
+import { XstateAngular } from 'xstate-angular';
 import { GLOBAL_XSTATE_ANGULAR } from './+xstate/auth-machine.config';
-import { AuthMachineContext, AuthMachineSchema } from './+xstate/auth-machine.schema';
+import {
+  AuthMachineContext,
+  AuthMachineSchema,
+} from './+xstate/auth-machine.schema';
 import { AuthMachineEvent } from './+xstate/auth-machine.events';
 
 const authRouting = RouterModule.forChild([
@@ -35,7 +38,15 @@ const authRouting = RouterModule.forChild([
       useClass: TokenInterceptorService,
       multi: true,
     },
-    { provide: GLOBAL_XSTATE_ANGULAR, useFactory: () => new XstateAngular<AuthMachineContext, AuthMachineSchema, AuthMachineEvent>() },
+    {
+      provide: GLOBAL_XSTATE_ANGULAR,
+      useFactory: () =>
+        new XstateAngular<
+          AuthMachineContext,
+          AuthMachineSchema,
+          AuthMachineEvent
+        >(),
+    },
   ],
   declarations: [LoginComponent, RegisterComponent],
 })

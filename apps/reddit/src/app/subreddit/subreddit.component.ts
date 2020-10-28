@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { SubReddit } from '../+xstate/reddit-machine.schema';
-import { InterpretedService, useService } from '@xstate-angular/xstate-angular';
+import { InterpretedService, useService } from 'xstate-angular';
 import {
   SubRedditContext,
   SubRedditSchema,
