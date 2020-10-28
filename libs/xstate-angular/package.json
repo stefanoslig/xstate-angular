@@ -1,5 +1,5 @@
 {
-  "name": "@xstate-angular/xstate-angular",
+  "name": "xstate-angular",
   "version": "0.0.1",
   "description": "This package created to make interactions with XState in an Angular application easier",
   "publishConfig": {

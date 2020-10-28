@@ -16,7 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@xstate-angular/xstate-angular": ["libs/xstate-angular/src/index.ts"]
+      "xstate-angular": ["libs/xstate-angular/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
