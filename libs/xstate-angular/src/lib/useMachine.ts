@@ -9,7 +9,6 @@ import {
   Interpreter,
   StateMachine,
   Typestate,
-  StateSchema,
 } from 'xstate';
 import { filter, shareReplay, takeUntil } from 'rxjs/operators';
 import { from, ReplaySubject } from 'rxjs';
@@ -39,7 +38,7 @@ export class XstateAngular<
       activities,
       services,
       delays,
-      state,
+      state: rehydratedState,
       ...interpreterOptions
     } = options;
 
@@ -58,11 +57,13 @@ export class XstateAngular<
     } as TContext);
 
     const service = interpret(createdMachine, interpreterOptions).start(
-      state ? (State.create(state) as any) : undefined
+      rehydratedState ? (State.create(rehydratedState) as any) : undefined
     );
 
     const state$ = from(service).pipe(
-      filter(({ changed }) => changed),
+      filter(
+        ({ changed }) => changed || (changed === undefined && !!rehydratedState)
+      ),
       shareReplay(1),
       takeUntil(this.unsubscribe$)
     );
