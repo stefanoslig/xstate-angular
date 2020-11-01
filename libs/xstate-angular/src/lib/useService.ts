@@ -6,7 +6,7 @@ import {
   StateSchema,
 } from 'xstate';
 import { filter, finalize, shareReplay } from 'rxjs/operators';
-import { Observable, from, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 export function useService<
   TContext,
@@ -20,13 +20,15 @@ export function useService<
   send: Interpreter<TContext, TStateSchema, TEvent, TTypestate>['send'];
   service: Interpreter<TContext, TStateSchema, TEvent, TTypestate>;
 } {
-  const state$ = new BehaviorSubject(service.state);
-  const sub = service.subscribe((s) => state$.next(s));
+  const _state$ = new BehaviorSubject(service.state);
+  const sub = service.subscribe((s) => _state$.next(s));
 
-  state$.pipe(
+  const state$ = _state$.pipe(
     filter(({ changed }) => changed),
     shareReplay(1),
-    finalize(() => sub.unsubscribe())
+    finalize(() => {
+      sub.unsubscribe();
+    })
   );
 
   return { state$, send: service.send, service };

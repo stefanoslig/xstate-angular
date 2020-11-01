@@ -10,7 +10,7 @@ export const createSubredditMachine = (subreddit: string) => {
       context: {
         subreddit,
         posts: null,
-        lastUpdated: null
+        lastUpdated: null,
       },
       states: {
         loading: {
@@ -21,31 +21,31 @@ export const createSubredditMachine = (subreddit: string) => {
               target: 'loaded',
               actions: assign({
                 posts: (_, event) => event.data,
-                lastUpdated: () => Date.now()
-              })
+                lastUpdated: () => Date.now(),
+              }),
             },
-            onError: 'failed'
-          }
+            onError: 'failed',
+          },
         },
         loaded: {
           on: {
-            REFRESH: 'loading'
-          }
+            REFRESH: 'loading',
+          },
         },
         failed: {
           on: {
-            RETRY: 'loading'
-          }
-        }
-      }
+            RETRY: 'loading',
+          },
+        },
+      },
     },
     {
       services: {
         invokeFetchSubreddit: (context, event) =>
           fetch(`https://www.reddit.com/r/${context.subreddit}.json`)
-            .then(response => response.json())
-            .then(json => json.data.children.map(child => child.data))
-      }
+            .then((response) => response.json())
+            .then((json) => json.data.children.map((child) => child.data)),
+      },
     }
   );
 };

@@ -56,19 +56,22 @@ export class XstateAngular<
       ...context,
     } as TContext);
 
-    const service = interpret(createdMachine, interpreterOptions).start(
+    this.service = interpret(createdMachine, interpreterOptions).start(
       rehydratedState ? (State.create(rehydratedState) as any) : undefined
     );
 
-    const state$ = from(service).pipe(
+    const state$ = from(this.service).pipe(
       filter(
-        ({ changed }) => changed || (changed === undefined && !!rehydratedState)
+        ({ changed, event }) =>
+          changed ||
+          (changed === undefined && !!rehydratedState) ||
+          (changed === undefined && !!(event?.type === 'xstate.init'))
       ),
       shareReplay(1),
       takeUntil(this.unsubscribe$)
     );
 
-    return { state$, send: service.send, service };
+    return { state$, send: this.service.send, service: this.service };
   }
 
   ngOnDestroy() {

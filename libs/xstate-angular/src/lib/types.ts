@@ -1,5 +1,12 @@
 import { Observable } from 'rxjs';
-import { EventObject, Interpreter, State, StateConfig, StateSchema, Typestate } from 'xstate';
+import {
+  EventObject,
+  Interpreter,
+  State,
+  StateConfig,
+  StateSchema,
+  Typestate,
+} from 'xstate';
 
 export interface UseMachineOptions<TContext, TEvent extends EventObject> {
   /**
