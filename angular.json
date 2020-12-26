@@ -25,7 +25,9 @@
               "apps/conduit/src/favicon.ico",
               "apps/conduit/src/assets"
             ],
-            "styles": ["apps/conduit/src/styles.scss"],
+            "styles": [
+              "apps/conduit/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -39,7 +41,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -57,7 +58,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -84,7 +88,10 @@
               "apps/conduit/tsconfig.spec.json",
               "apps/conduit/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/conduit/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/conduit/**/*"
+            ]
           }
         },
         "test": {
@@ -92,7 +99,10 @@
           "options": {
             "jestConfig": "apps/conduit/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/conduit"
+          ]
         }
       }
     },
@@ -117,8 +127,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/conduit-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/conduit-e2e/**/*"]
+            "tsConfig": [
+              "apps/conduit-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/conduit-e2e/**/*"
+            ]
           }
         }
       }
@@ -143,8 +158,13 @@
             "polyfills": "apps/reddit/src/polyfills.ts",
             "tsConfig": "apps/reddit/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/reddit/src/favicon.ico", "apps/reddit/src/assets"],
-            "styles": ["apps/reddit/src/styles.scss"],
+            "assets": [
+              "apps/reddit/src/favicon.ico",
+              "apps/reddit/src/assets"
+            ],
+            "styles": [
+              "apps/reddit/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -158,7 +178,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -176,7 +195,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -203,7 +225,10 @@
               "apps/reddit/tsconfig.spec.json",
               "apps/reddit/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/reddit/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/reddit/**/*"
+            ]
           }
         },
         "test": {
@@ -211,7 +236,10 @@
           "options": {
             "jestConfig": "apps/reddit/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/reddit"
+          ]
         }
       }
     },
@@ -236,8 +264,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/reddit-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/reddit-e2e/**/*"]
+            "tsConfig": [
+              "apps/reddit-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/reddit-e2e/**/*"
+            ]
           }
         }
       }
@@ -267,7 +300,10 @@
               "libs/xstate-angular/tsconfig.lib.json",
               "libs/xstate-angular/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/xstate-angular/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/xstate-angular/**/*"
+            ]
           }
         },
         "test": {
@@ -275,7 +311,10 @@
           "options": {
             "jestConfig": "libs/xstate-angular/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/xstate-angular"
+          ]
         }
       },
       "schematics": {
@@ -308,7 +347,9 @@
               "apps/examples/src/favicon.ico",
               "apps/examples/src/assets"
             ],
-            "styles": ["apps/examples/src/styles.scss"],
+            "styles": [
+              "apps/examples/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -322,7 +363,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -340,7 +380,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -367,7 +410,10 @@
               "apps/examples/tsconfig.spec.json",
               "apps/examples/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/examples/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/examples/**/*"
+            ]
           }
         },
         "test": {
@@ -375,7 +421,10 @@
           "options": {
             "jestConfig": "apps/examples/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/examples"
+          ]
         }
       }
     },
@@ -400,8 +449,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/examples-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/examples-e2e/**/*"]
+            "tsConfig": [
+              "apps/examples-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/examples-e2e/**/*"
+            ]
           }
         }
       }
