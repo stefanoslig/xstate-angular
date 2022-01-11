@@ -20,7 +20,6 @@
             "main": "apps/conduit/src/main.ts",
             "polyfills": "apps/conduit/src/polyfills.ts",
             "tsConfig": "apps/conduit/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/conduit/src/favicon.ico",
               "apps/conduit/src/assets"
@@ -28,7 +27,13 @@
             "styles": [
               "apps/conduit/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -61,7 +66,8 @@
           },
           "outputs": [
             "{options.outputPath}"
-          ]
+          ],
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -157,7 +163,6 @@
             "main": "apps/reddit/src/main.ts",
             "polyfills": "apps/reddit/src/polyfills.ts",
             "tsConfig": "apps/reddit/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/reddit/src/favicon.ico",
               "apps/reddit/src/assets"
@@ -165,7 +170,13 @@
             "styles": [
               "apps/reddit/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -198,7 +209,8 @@
           },
           "outputs": [
             "{options.outputPath}"
-          ]
+          ],
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -342,7 +354,6 @@
             "main": "apps/examples/src/main.ts",
             "polyfills": "apps/examples/src/polyfills.ts",
             "tsConfig": "apps/examples/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/examples/src/favicon.ico",
               "apps/examples/src/assets"
@@ -350,7 +361,13 @@
             "styles": [
               "apps/examples/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -383,7 +400,8 @@
           },
           "outputs": [
             "{options.outputPath}"
-          ]
+          ],
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
