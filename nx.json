@@ -18,7 +18,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -28,14 +33,18 @@
     },
     "conduit-e2e": {
       "tags": [],
-      "implicitDependencies": ["conduit"]
+      "implicitDependencies": [
+        "conduit"
+      ]
     },
     "reddit": {
       "tags": []
     },
     "reddit-e2e": {
       "tags": [],
-      "implicitDependencies": ["reddit"]
+      "implicitDependencies": [
+        "reddit"
+      ]
     },
     "xstate-angular": {
       "tags": []
@@ -45,7 +54,56 @@
     },
     "examples-e2e": {
       "tags": [],
-      "implicitDependencies": ["examples"]
+      "implicitDependencies": [
+        "examples"
+      ]
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "conduit",
+  "generators": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
     }
   }
 }
