@@ -8,6 +8,8 @@ export class SubRedditService {
   constructor(private httpClient: HttpClient) {}
 
   subreddit(name: string): Observable<SubRedditResponse> {
-    return this.httpClient.get<SubRedditResponse>(`https://www.reddit.com/r/${name}.json`);
+    return this.httpClient.get<SubRedditResponse>(
+      `https://www.reddit.com/r/${name}.json`
+    );
   }
 }

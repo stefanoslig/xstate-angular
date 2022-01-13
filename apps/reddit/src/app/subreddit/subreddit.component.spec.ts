@@ -8,9 +8,8 @@ describe('SubredditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SubredditComponent ]
-    })
-    .compileComponents();
+      declarations: [SubredditComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

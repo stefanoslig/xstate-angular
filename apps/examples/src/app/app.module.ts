@@ -16,7 +16,10 @@ const routes: Routes = [
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([...routes], { initialNavigation: 'enabled', relativeLinkResolution: 'legacy' }),
+    RouterModule.forRoot([...routes], {
+      initialNavigation: 'enabled',
+      relativeLinkResolution: 'legacy',
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

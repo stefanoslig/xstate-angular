@@ -22,30 +22,51 @@
       }
     }
   },
-  "projects": {
-    "conduit": {
-      "tags": []
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "conduit",
+  "generators": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "tslint"
+      }
     },
-    "conduit-e2e": {
-      "tags": [],
-      "implicitDependencies": ["conduit"]
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "tslint"
+      }
     },
-    "reddit": {
-      "tags": []
+    "@nrwl/node": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
     },
-    "reddit-e2e": {
-      "tags": [],
-      "implicitDependencies": ["reddit"]
+    "@nrwl/nest": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
     },
-    "xstate-angular": {
-      "tags": []
+    "@nrwl/express": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
     },
-    "examples": {
-      "tags": []
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
     },
-    "examples-e2e": {
-      "tags": [],
-      "implicitDependencies": ["examples"]
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
     }
   }
 }
