@@ -5,12 +5,10 @@
   <div *ngIf="state.matches('loading')">Loading...</div>
   <div *ngIf="state.matches('loaded')">
     <header>
-      <h2>{{state.context.subreddit}}</h2>
+      <h2>{{ state.context.subreddit }}</h2>
       <small>
-        Last updated: {{state.context.lastUpdated | date: long}}
-        <button class="refresh-button" (click)="refresh()">
-          Refresh
-        </button>
+        Last updated: {{ state.context.lastUpdated | date: long }}
+        <button class="refresh-button" (click)="refresh()">Refresh</button>
       </small>
     </header>
     <ul>

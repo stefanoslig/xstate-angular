@@ -18,45 +18,8 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
-    }
-  },
-  "projects": {
-    "conduit": {
-      "tags": []
-    },
-    "conduit-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "conduit"
-      ]
-    },
-    "reddit": {
-      "tags": []
-    },
-    "reddit-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "reddit"
-      ]
-    },
-    "xstate-angular": {
-      "tags": []
-    },
-    "examples": {
-      "tags": []
-    },
-    "examples-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "examples"
-      ]
     }
   },
   "cli": {

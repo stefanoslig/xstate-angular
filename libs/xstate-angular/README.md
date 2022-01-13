@@ -1,4 +1,3 @@
-
 # xstate-angular
 
 [![npm version](https://badge.fury.io/js/xstate-angular.svg)](https://www.npmjs.com/package/xstate-angular)
@@ -15,7 +14,9 @@ This library provides helper functions for using XState in Angular applications
 ```sh
 npm i -S xstate-angular
 ```
+
 or
+
 ```sh
 yarn add xstate-angular
 ```
@@ -123,48 +124,48 @@ Example: the `'fetchData'` service and `'notifySuccess'` action are both configu
 import { Machine } from 'xstate';
 import { InterpretedService, XstateAngular } from 'xstate-angular';
 // other imports
-  
-const onFetch = () => new Promise(res => res("some data"));
+
+const onFetch = () => new Promise((res) => res('some data'));
 
 const fetchMachine = Machine({
-    id: "fetch",
-    initial: "idle",
-    context: {
-      data: undefined,
-      error: undefined
+  id: 'fetch',
+  initial: 'idle',
+  context: {
+    data: undefined,
+    error: undefined,
+  },
+  states: {
+    idle: {
+      on: { FETCH: 'loading' },
     },
-    states: {
-      idle: {
-        on: { FETCH: "loading" }
+    loading: {
+      invoke: {
+        src: 'fetchData',
+        onDone: {
+          target: 'success',
+          actions: assign({
+            data: (_, event) => event.data,
+          }),
+        },
+        onError: {
+          target: 'failure',
+          actions: assign({
+            error: (_, event) => event.data,
+          }),
+        },
       },
-      loading: {
-        invoke: {
-          src: "fetchData",
-          onDone: {
-            target: "success",
-            actions: assign({
-              data: (_, event) => event.data
-            })
-          },
-          onError: {
-            target: "failure",
-            actions: assign({
-              error: (_, event) => event.data
-            })
-          }
-        }
+    },
+    success: {
+      entry: 'notifySuccess',
+      type: 'final',
+    },
+    failure: {
+      on: {
+        RETRY: 'loading',
       },
-      success: {
-        entry: "notifySuccess",
-        type: "final"
-      },
-      failure: {
-        on: {
-          RETRY: "loading"
-        }
-      }
-    }
-  });
+    },
+  },
+});
 
 @Component({
   selector: 'xstate-angular-fetch',
@@ -188,13 +189,14 @@ export class FetchComponent implements OnInit {
     >
   ) {
     this.service = this.xstateAngular.useMachine(fetchMachine, {
-		actions: {
-			notifySuccess: ctx => console.log("resolve", ctx.data)
-		},
-		services: {
-			fetchData: (_, e) => fetch(`some/api/${e.query}`).then(res => res.json())
-		}
-	});
+      actions: {
+        notifySuccess: (ctx) => console.log('resolve', ctx.data),
+      },
+      services: {
+        fetchData: (_, e) =>
+          fetch(`some/api/${e.query}`).then((res) => res.json()),
+      },
+    });
   }
 }
 ```
@@ -205,13 +207,15 @@ You can persist and rehydrate state with `useMachine(...)` via `options.state`:
 
 ```html
 <script>
-  import { useMachine } from "xstate-angular";
+  import { useMachine } from 'xstate-angular';
 
   // Get the persisted state config object from somewhere, e.g. localStorage
-  const persistedState = JSON.parse(localStorage.getItem('some-persisted-state-key'));
+  const persistedState = JSON.parse(
+    localStorage.getItem('some-persisted-state-key')
+  );
 
   this.service = this.xstateAngular.useMachine(someMachine, {
-    state: persistedState // provide persisted state config object here
+    state: persistedState, // provide persisted state config object here
   });
 
   // state will initially be that persisted state, not the machine's initialState

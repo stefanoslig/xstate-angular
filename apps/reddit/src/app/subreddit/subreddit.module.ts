@@ -5,6 +5,6 @@ import { SubredditComponent } from './subreddit.component';
 @NgModule({
   declarations: [SubredditComponent],
   exports: [SubredditComponent],
-  imports: [BrowserModule]
+  imports: [BrowserModule],
 })
 export class SubredditModule {}

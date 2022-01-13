@@ -24,9 +24,7 @@
               "apps/conduit/src/favicon.ico",
               "apps/conduit/src/assets"
             ],
-            "styles": [
-              "apps/conduit/src/styles.scss"
-            ],
+            "styles": ["apps/conduit/src/styles.scss"],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -64,9 +62,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "defaultConfiguration": ""
         },
         "serve": {
@@ -92,11 +88,10 @@
             "jestConfig": "apps/conduit/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/apps/conduit"
-          ]
+          "outputs": ["coverage/apps/conduit"]
         }
-      }
+      },
+      "tags": []
     },
     "conduit-e2e": {
       "root": "apps/conduit-e2e",
@@ -116,159 +111,9 @@
             }
           }
         }
-      }
-    },
-    "reddit": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
       },
-      "root": "apps/reddit",
-      "sourceRoot": "apps/reddit/src",
-      "prefix": "xstate-angular",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/reddit",
-            "index": "apps/reddit/src/index.html",
-            "main": "apps/reddit/src/main.ts",
-            "polyfills": "apps/reddit/src/polyfills.ts",
-            "tsConfig": "apps/reddit/tsconfig.app.json",
-            "assets": [
-              "apps/reddit/src/favicon.ico",
-              "apps/reddit/src/assets"
-            ],
-            "styles": [
-              "apps/reddit/src/styles.scss"
-            ],
-            "scripts": [],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/reddit/src/environments/environment.ts",
-                  "with": "apps/reddit/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          },
-          "outputs": [
-            "{options.outputPath}"
-          ],
-          "defaultConfiguration": ""
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "reddit:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "reddit:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "reddit:build"
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/reddit/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/apps/reddit"
-          ]
-        }
-      }
-    },
-    "reddit-e2e": {
-      "root": "apps/reddit-e2e",
-      "sourceRoot": "apps/reddit-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/reddit-e2e/cypress.json",
-            "tsConfig": "apps/reddit-e2e/tsconfig.e2e.json",
-            "devServerTarget": "reddit:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "reddit:serve:production"
-            }
-          }
-        }
-      }
-    },
-    "xstate-angular": {
-      "projectType": "library",
-      "root": "libs/xstate-angular",
-      "sourceRoot": "libs/xstate-angular/src",
-      "prefix": "xstate-angular",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/xstate-angular/tsconfig.lib.json",
-            "project": "libs/xstate-angular/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/xstate-angular/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/xstate-angular/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/libs/xstate-angular"
-          ]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
+      "tags": [],
+      "implicitDependencies": ["conduit"]
     },
     "examples": {
       "projectType": "application",
@@ -293,9 +138,7 @@
               "apps/examples/src/favicon.ico",
               "apps/examples/src/assets"
             ],
-            "styles": [
-              "apps/examples/src/styles.scss"
-            ],
+            "styles": ["apps/examples/src/styles.scss"],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -333,9 +176,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "defaultConfiguration": ""
         },
         "serve": {
@@ -361,11 +202,10 @@
             "jestConfig": "apps/examples/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/apps/examples"
-          ]
+          "outputs": ["coverage/apps/examples"]
         }
-      }
+      },
+      "tags": []
     },
     "examples-e2e": {
       "root": "apps/examples-e2e",
@@ -385,7 +225,154 @@
             }
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["examples"]
+    },
+    "reddit": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/reddit",
+      "sourceRoot": "apps/reddit/src",
+      "prefix": "xstate-angular",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/reddit",
+            "index": "apps/reddit/src/index.html",
+            "main": "apps/reddit/src/main.ts",
+            "polyfills": "apps/reddit/src/polyfills.ts",
+            "tsConfig": "apps/reddit/tsconfig.app.json",
+            "assets": ["apps/reddit/src/favicon.ico", "apps/reddit/src/assets"],
+            "styles": ["apps/reddit/src/styles.scss"],
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/reddit/src/environments/environment.ts",
+                  "with": "apps/reddit/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          },
+          "outputs": ["{options.outputPath}"],
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "reddit:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "reddit:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "reddit:build"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/reddit/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/apps/reddit"]
+        }
+      },
+      "tags": []
+    },
+    "reddit-e2e": {
+      "root": "apps/reddit-e2e",
+      "sourceRoot": "apps/reddit-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/reddit-e2e/cypress.json",
+            "tsConfig": "apps/reddit-e2e/tsconfig.e2e.json",
+            "devServerTarget": "reddit:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "reddit:serve:production"
+            }
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["reddit"]
+    },
+    "xstate-angular": {
+      "projectType": "library",
+      "root": "libs/xstate-angular",
+      "sourceRoot": "libs/xstate-angular/src",
+      "prefix": "xstate-angular",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/xstate-angular/tsconfig.lib.json",
+            "project": "libs/xstate-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/xstate-angular/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/xstate-angular/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/xstate-angular"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "tags": []
     }
   }
 }

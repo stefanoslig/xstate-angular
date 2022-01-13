@@ -25,10 +25,10 @@ import { GLOBAL_XSTATE_ANGULAR } from './auth/+xstate/auth-machine.config';
         },
       ],
       {
-    initialNavigation: 'enabled',
-    useHash: true,
-    relativeLinkResolution: 'legacy'
-}
+        initialNavigation: 'enabled',
+        useHash: true,
+        relativeLinkResolution: 'legacy',
+      }
     ),
   ],
   declarations: [AppComponent, FooterComponent, NavbarComponent],
