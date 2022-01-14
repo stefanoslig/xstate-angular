@@ -24,7 +24,9 @@
               "apps/conduit/src/favicon.ico",
               "apps/conduit/src/assets"
             ],
-            "styles": ["apps/conduit/src/styles.scss"],
+            "styles": [
+              "apps/conduit/src/styles.scss"
+            ],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -62,7 +64,9 @@
               ]
             }
           },
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "defaultConfiguration": ""
         },
         "serve": {
@@ -88,7 +92,9 @@
             "jestConfig": "apps/conduit/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/apps/conduit"]
+          "outputs": [
+            "coverage/apps/conduit"
+          ]
         }
       },
       "tags": []
@@ -113,7 +119,9 @@
         }
       },
       "tags": [],
-      "implicitDependencies": ["conduit"]
+      "implicitDependencies": [
+        "conduit"
+      ]
     },
     "examples": {
       "projectType": "application",
@@ -138,7 +146,9 @@
               "apps/examples/src/favicon.ico",
               "apps/examples/src/assets"
             ],
-            "styles": ["apps/examples/src/styles.scss"],
+            "styles": [
+              "apps/examples/src/styles.scss"
+            ],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -176,7 +186,9 @@
               ]
             }
           },
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "defaultConfiguration": ""
         },
         "serve": {
@@ -202,7 +214,9 @@
             "jestConfig": "apps/examples/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/apps/examples"]
+          "outputs": [
+            "coverage/apps/examples"
+          ]
         }
       },
       "tags": []
@@ -227,7 +241,9 @@
         }
       },
       "tags": [],
-      "implicitDependencies": ["examples"]
+      "implicitDependencies": [
+        "examples"
+      ]
     },
     "reddit": {
       "projectType": "application",
@@ -248,8 +264,13 @@
             "main": "apps/reddit/src/main.ts",
             "polyfills": "apps/reddit/src/polyfills.ts",
             "tsConfig": "apps/reddit/tsconfig.app.json",
-            "assets": ["apps/reddit/src/favicon.ico", "apps/reddit/src/assets"],
-            "styles": ["apps/reddit/src/styles.scss"],
+            "assets": [
+              "apps/reddit/src/favicon.ico",
+              "apps/reddit/src/assets"
+            ],
+            "styles": [
+              "apps/reddit/src/styles.scss"
+            ],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -287,7 +308,9 @@
               ]
             }
           },
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "defaultConfiguration": ""
         },
         "serve": {
@@ -313,7 +336,9 @@
             "jestConfig": "apps/reddit/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/apps/reddit"]
+          "outputs": [
+            "coverage/apps/reddit"
+          ]
         }
       },
       "tags": []
@@ -338,7 +363,9 @@
         }
       },
       "tags": [],
-      "implicitDependencies": ["reddit"]
+      "implicitDependencies": [
+        "reddit"
+      ]
     },
     "xstate-angular": {
       "projectType": "library",
@@ -364,7 +391,9 @@
             "jestConfig": "libs/xstate-angular/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/xstate-angular"]
+          "outputs": [
+            "coverage/libs/xstate-angular"
+          ]
         }
       },
       "schematics": {

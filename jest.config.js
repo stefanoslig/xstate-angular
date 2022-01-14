@@ -1,8 +1,3 @@
-module.exports = {
-  projects: [
-    '<rootDir>/apps/conduit',
-    '<rootDir>/libs/xstate-angular',
-    '<rootDir>/apps/reddit',
-    '<rootDir>/apps/examples',
-  ],
-};
+const { getJestProjects } = require('@nrwl/jest');
+
+module.exports = { projects: getJestProjects() };
